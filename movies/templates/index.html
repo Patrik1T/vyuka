@@ -1,0 +1,27 @@
+<!-- Šablona dědí základní šablonu "base.html" -->
+{% extends "base.html" %}
+
+<!-- Do bloku content vsuneme následující kód  -->
+{% block content %}
+<div class="row mb-3">
+    <div class="col-sm-12">
+        <h2 class="display-4 text-center text-primary">Vyukové materiály</h2>
+    </div>
+</div>
+    {% for film in filmy %}
+<div class="row mb-2 pt-2 border-top">
+    <div class="col-sm-2">
+        {% if film.poster %}
+        <img class="card-img-top" src="{{ film.poster.url }}" alt="{{ film.title }}">
+        {% endif %}
+    </div>
+    <div class="col-sm-10">
+        <h4><a href="#" class="text-info">{{ film.title }} ({{ film.release_date.year }})</a></h4>
+        <p>{{ film.plot|truncatewords:50 }}</p>
+        <p>Hodnocení: <span class="badge badge-dark">{{ film.rate }}</span></p>
+        <p class="card-text">{% for genre in film.genres.all %}<a href="#" class="btn btn-light">{{ genre.name }}</a> {% endfor %}</p>
+    </div>
+</div>
+    {% endfor %}
+
+{% endblock %}

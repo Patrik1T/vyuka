@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <!-- Blok s titulkem stránky -->
+    <title>{% block title %}Filmotéka{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <!-- Připojení vlastního CSS souboru umístěného ve struktuře složky static -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Záhlaví stránky -->
+    {% block header %}
+        {% include "page/header.html" %}
+    {% endblock %}
+    <!-- Navigační lišta -->
+    {% block navbar %}
+        {% include "page/navbar.html" %}
+    {% endblock %}
+    <!-- Hlavní blok stránky -->
+    <main>
+        <div class="container">
+            <!-- Zde bude vsunut blok s obsahem aktuální stránky -->
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    <!-- Zápatí stránky -->
+    {% block footer %}
+        {% include "page/footer.html" %}
+    {% endblock %}
+    <!-- Připojení externích JS knihoven -->
+    <!-- jQuery library -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'bootstrap/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'bootstrap/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+    <!-- Připravený blok pro vložení/připojení dalších skriptů podle potřeby jednotlivých stránek -->
+    {% block scripts %}{% endblock %}
+</body>
+</html>

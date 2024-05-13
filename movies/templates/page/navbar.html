@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-md bg-secondary navbar-dark mb-2">
+    <!-- Brand -->
+
+    <!-- Přepínací tlačítko pro mobilní zobrazení -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Hlavní menu -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <!-- Odkaz na úvodní stránku webu -->
+                <a class="nav-link active" href="{% url 'index' %}">Úvodní stránka</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Vyukovematerialy</a>
+            </li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Předměty
+                </a>
+              <div class="dropdown-menu">
+                 {% for predmet in genres %}
+                    <a class="dropdown-item" href="#">
+                        {{ predmet.name }}</a>
+                 {% endfor %}
+              </div>
+            </li>
+        </ul>
+    </div>
+</nav>

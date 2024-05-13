@@ -1,0 +1,10 @@
+header {
+    background-repeat: no-repeat;
+    background-position: 50px 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        background-image: none;
+    }
+}
