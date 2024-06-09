@@ -15,6 +15,5 @@
 - `python manage.py runserver`
 
 ### Přístupové údaje do administrace
-- superuživatel: `Nevim`
-- heslo: `Jaopravdunevimcomamdelat`
-- nebo Jaopravdunevim
+- superuživatel: `megaagri`
+- heslo: `Jaopravdunevim12`
